@@ -10,12 +10,13 @@ window.onload = function() {
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
 
-        if(validateForm()) {
+        if(validateForm())
+         {
             var messageContainer = document.getElementById("emailResponseContainer");
             var message = document.getElementById("emailResponse");
             
-            emailjs.sendForm('service_???', 'template_???', this) // paller.peter
-            //emailjs.sendForm('service_9gwm38t', 'template_oun59fs', this) // IBT
+            emailjs.sendForm('service_uiedg7x', 'template_o1jsn3m', this) // paller.peter
+            //emailjs.sendForm('service_???', 'template_???', this) // IBT
             .then(() => {
                 if (messageContainer && message){
                     message.innerHTML = "The message has been successfully sent.";
@@ -25,6 +26,7 @@ window.onload = function() {
                     //     messageContainer.classList.add("hidden");
                     // }, 5000);
                     this.reset();
+                    console.log('email sent!');
                 }
             }, (error) => {
                 message.innerHTML = "The email sending failed. Please contact us at the provided email address.";
