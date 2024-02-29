@@ -47,6 +47,10 @@ hr.botm-line {
     margin: 20px 0 20px 0;
     opacity: 1;
 }
+p.default {
+    line-height: 2.5rem;
+    text-align: justify;
+}
 /***************************************
 banner
 ***************************************/
@@ -69,14 +73,13 @@ banner
 .navbar li {
     white-space: nowrap;
 }
-@media (max-width: 768px) {
+@media (max-width: 991px) {
 	.navbar-collapse {
 		background: #3387c9d1;
 	}
 }
 .top-nav-collapse {
     padding: 0;
-    background: #3387c9d1;
 }
 
 .white, .white:hover, .white:focus
@@ -111,7 +114,7 @@ banner
     box-shadow: 0 0 0 0.15rem   #ddbd30;
 }
 #banner{
-	background: url('../img/bg_banner.png') no-repeat fixed;
+	background: url('../img/banner.png') no-repeat fixed;
 	background-size: cover;
 	min-height: 650px;
 	position: relative;
@@ -248,7 +251,7 @@ concept
     float: left;
     width: 40px;
     height: 40px;
-    padding-top: 8px;
+    padding-top: 7px;
     background: #2673b0;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -267,9 +270,6 @@ concept
 .more-features-box-text-description{
 	margin-left: 20px;
 	margin-bottom: 35px;
-}
-.sec-para{
-	padding-bottom: 10px;
 }
 /***************************************
 features
@@ -352,6 +352,16 @@ video
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 arányhoz tartozó padding-bottom érték */
     height: 0;
+}
+
+.video-cover {
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+    background-color: #F6FAFD;
+    background-image: url('../img/video_cover.jpg');
+    background-size: cover;
+    z-index: 1; 
 }
   
 .video-container iframe {
@@ -538,6 +548,9 @@ footer
 ***************************************/
 #footer{
 	background-color: #3387c9d1;
+}
+footer ol, footer ul, footer p {
+    padding-left: 1rem;
 }
 .ftr-tle {
     height: 50px;
@@ -809,6 +822,9 @@ footer
         font-size: 1.5rem!important;
         font-weight: 600;
         vertical-align: middle;
+    }
+        footer ol, footer ul {
+        padding-left: 1rem;
     }
 }
 

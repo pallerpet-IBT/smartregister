@@ -30,14 +30,14 @@
   <section id="banner" class="banner">
     <div class="bg-color">
       <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid px-0 px-3 px-md-5">
+        <div class="container-fluid px-3 px-md-5">
             <div class="navbar-header">
               <a href="#"><img src="img/logo.png" class="img-responsive" style="width: 140px; margin: 0"></a>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="collapse navbar-collapse mb-3 mb-lg-0" id="myNavbar">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p-2 p-lg-0">
                 <li class="nav-item">
                   <a class="nav-link" href="#banner" aria-current="page">Home</a>
@@ -94,7 +94,7 @@
           <div class="section-title">
             <h2 class="head-title lg-line">SmartReg Concept</h2>
             <hr class="botm-line">
-            <p class="sec-para" style="line-height: 2.5rem;  text-align: justify;">The Smart Registry concept is an integrated, 
+            <p class="default pb-3" class="default">The Smart Registry concept is an integrated, 
               all-around solution that supports patient-care and clinical data analysis throughout the entire patient journey. 
               The modular structure of the system ensures continuous development and the implementation of a digital research ecosystem.</p>
             <div>
@@ -108,7 +108,7 @@
               <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
               <div class="more-features-box-text-description">
                 <h3>Data management</h3>
-                <p style="line-height: 2.5rem;  text-align: justify;">Recording, processing and organizing clinical, sampling, diagnostic and therapeutic data,
+                <p class="default">Recording, processing and organizing clinical, sampling, diagnostic and therapeutic data,
                    while adhering to high-level security standards, utilizing reliable authentication and authorization.</p>
               </div>
             </div>
@@ -116,7 +116,7 @@
               <div class="more-features-box-text-icon"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
               <div class="more-features-box-text-description">
                 <h3>Integration</h3>
-                <p style="line-height: 2.5rem;  text-align: justify;">Integration capabilities with existing tools and systems (e.g. QCI, MRI) 
+                <p class="default">Integration capabilities with existing tools and systems (e.g. QCI, MRI) 
                   for process automation, as well as data-sharing functionality (file and interface based) for external systems and partners 
                   (EESZT, research institutions, foreign partners) ensure interoperability.</p>
               </div>
@@ -135,7 +135,7 @@
           <h2 class="ser-title">Advantages</h2>
           <hr class="botm-line">
           <div class="space"></div>
-          <p style="line-height: 2.5rem;  text-align: justify;">Ide semmi????
+          <p class="default">Ide semmi????
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum soluta unde molestias veritatis a culpa alias debitis aliquid suscipit exercitationem sunt consequatur esse expedita ratione dolor perferendis, eligendi cupiditate illum!</p>
         </div>
 
@@ -187,7 +187,7 @@
   </section>
   <!--/ advantages-->
   <!-- features -->
-  <section id="features" class="section-padding">
+  <section id="features" class="section-padding pb-5">
     <div class="container">
       <h2 class="ser-title">Features</h2>
       <hr class="botm-line">
@@ -249,17 +249,19 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <section id="demovideo" class="block w-full m-auto pt-5">
+          <section id="demovideo" class="block w-full m-auto">
             <h2>DEMO VIDEO</h2>
             <hr class="botm-line">
             <div class="space"></div>
-            <div class="video-container">
-                <iframe
-                    src="https://player.vimeo.com/video/917082880"
-                    frameborder="0"
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen="">
-                  </iframe>
+            <div id="videoCover" class="video-cover">
+                  <iframe
+                      id="videoIframe"
+                      src="https://player.vimeo.com/video/917082880"
+                      frameborder="0"
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen="">
+                    </iframe>
+                </div>
             </div>
         </section>
         </div>
@@ -276,7 +278,7 @@
           <hr class="botm-line">
         </div>
         <div class="col-md-12 col-sm-12">
-          <p style="line-height: 3rem;  text-align: justify;">
+          <p class="default">
             Our team is dedicated to providing comprehensive end-to-end solutions for patient data registries. 
             With our deep expertise in digital health and BIMS technology, we manage every phase of the 
             Smart Registry project lifecycle—from initial consultation and system design to implementation, 
@@ -284,7 +286,7 @@
             only tailored to meet the specific needs of our clients but also fully integrated with their 
             existing workflows and systems, facilitating seamless data management and operational efficiency. 
           </p>
-          <p style="line-height: 3rem;  text-align: justify;">
+          <p class="default">
             With backgrounds as researchers, technical engineers, and software architects, we possess 
             a comprehensive understanding of both the theoretical and practical aspects of biobanking. 
             Our collective experience in development and data management is extensive, enabling us to 
@@ -400,7 +402,7 @@
               <h4 class="white no-padding">About Us</h4>
             </div>
             <div class="info-sec">
-              <p>
+              <p class="col-12 col-md-9" >
                 Empowering developers to innovate biospecimen management, fostering future-focused research solutions.</p>
             </div>
           </div>
@@ -410,9 +412,9 @@
             </div>
             <div class="info-sec">
               <ul class="quick-info">
-                <li><a href="index.html"><i class="fa fa-circle"></i>Home</a></li>
-                <li><a href="#concept"><i class="fa fa-circle"></i>Concept</a></li>
-                <li><a href="#advantages"><i class="fa fa-circle"></i>Advantages</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#concept">Concept</a></li>
+                <li><a href="#advantages">Advantages</a></li>
               </ul>
             </div>
           </div>
@@ -456,6 +458,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="js/email.js"></script>
+  <script src="js/nav.js"></script>
   <script src="js/validation.js"></script>
 
 </body>
