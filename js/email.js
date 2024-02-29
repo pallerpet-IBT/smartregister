@@ -10,6 +10,7 @@ window.onload = function() {
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
 
+        //if(1===1)
         if(validateForm())
          {
             var messageContainer = document.getElementById("emailResponseContainer");
@@ -22,11 +23,14 @@ window.onload = function() {
                     message.innerHTML = "The message has been successfully sent.";
                     messageContainer.classList.add("alert-success");
                     messageContainer.classList.remove("hidden");
-                    // setTimeout(function() {
-                    //     messageContainer.classList.add("hidden");
-                    // }, 5000);
+                    setTimeout(function() {
+                        messageContainer.style.display = "none";   
+                        console.log('messageContainer is hidden', messageContainer);
+                    }, 4000);
                     this.reset();
                     console.log('email sent!');
+                    document.getElementById("contact-form").classList.remove("was-validated");
+                    reloadForm();
                 }
             }, (error) => {
                 message.innerHTML = "The email sending failed. Please contact us at the provided email address.";
@@ -45,41 +49,30 @@ function validateForm() {
   
     inputs.forEach(function(input) {
       var rule = input.getAttribute('data-rule');
-      var msg = input.getAttribute('data-msg');
       var value = input.value.trim();
   
       if (rule === 'required' && value === '') {
-        showError(input, msg);
         isValid = false;
       } else if (rule === 'email' && !validateEmail(value)) {
-        showError(input, msg);
         isValid = false;
       } else if (rule.startsWith('minlen')  && value.length < parseInt(input.getAttribute('data-rule').split(':')[1], 10)) {
-        showError(input, msg);
         isValid = false;
-      } else {
-        hideError(input);
       }
     });
   
     return isValid;
-  }
-  
-  function showError(input, message) {
-    var parent = input.parentElement;
-    var validationMsg = parent.querySelector('.validation');
-    validationMsg.innerHTML = message;
-    validationMsg.style.display = 'block';
-  }
-  
-  function hideError(input) {
-    var parent = input.parentElement;
-    var validationMsg = parent.querySelector('.validation');
-    validationMsg.innerHTML = '';
-    validationMsg.style.display = 'none';
-  }
-  
-  function validateEmail(email) {
+}
+
+function validateEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
-  }
+}
+
+function reloadForm(){
+    var form = document.getElementById("contact-form");
+    var inputs = form.querySelectorAll("input, textarea, button");
+
+    inputs.forEach(function(input) {
+        input.classList.remove("is-valid", "is-invalid");
+    });
+}

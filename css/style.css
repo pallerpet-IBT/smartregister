@@ -529,12 +529,10 @@ textarea.form-control {
     transform: scale(1.05); 
     transition: transform 0.3s ease;
 }
-.form-control:focus{
-    border: 1px solid   #ddbd30!important;
-    box-shadow: 0 0 0 0.15rem   #ddbd3050;
+.form-control.is-valid:focus {
+    border: 1px solid   #198754!important;
+    /* box-shadow: 0 0 0 0.15rem   #ddbd3050; */
 }
-
-
 /***************************************
 footer
 ***************************************/
@@ -875,12 +873,19 @@ body {
     margin-bottom: 30px;
 }
  
-.form-content label,
-.was-validated .form-check-input:invalid~.form-check-label,
-.was-validated .form-check-input:valid~.form-check-label {
-    color: #fff;
+/* .form-control.is-valid, .was-validated .form-control:valid,
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: var(--bs-border-color)!important;
+    background-image: none!important;
+    padding-right: 0!important;
 }
- 
+.is-valid~.valid-feedback, .is-valid~.valid-tooltip, .was-validated :valid~.valid-feedback, .was-validated :valid~.valid-tooltip {
+    display: none!important;
+}
+#contact-form.was-validated .invalid-feedback {
+    display: none!important;
+} */
+
 .form-content input[type=text],
 .form-content input[type=password],
 .form-content input[type=email],
