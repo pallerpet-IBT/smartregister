@@ -235,9 +235,9 @@ td {
     font-size: 14px;
 }
 /***************************************
-smartRegConcept
+concept
 ***************************************/
-#smartRegConcept{
+#concept{
     background-color: rgba(238, 238, 238, 0.15);
 }
 .lg-line{
@@ -872,19 +872,6 @@ body {
     line-height: 20px;
     margin-bottom: 30px;
 }
- 
-/* .form-control.is-valid, .was-validated .form-control:valid,
-.form-control.is-invalid, .was-validated .form-control:invalid {
-    border-color: var(--bs-border-color)!important;
-    background-image: none!important;
-    padding-right: 0!important;
-}
-.is-valid~.valid-feedback, .is-valid~.valid-tooltip, .was-validated :valid~.valid-feedback, .was-validated :valid~.valid-tooltip {
-    display: none!important;
-}
-#contact-form.was-validated .invalid-feedback {
-    display: none!important;
-} */
 
 .form-content input[type=text],
 .form-content input[type=password],
