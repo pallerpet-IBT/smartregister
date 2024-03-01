@@ -21,9 +21,10 @@ table {
 }
 h1, h2, h3, h4, h5, h6
 {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
-	color: #222222;
+	font-family: 'Raleway', sans-serif;
+}
+.container h5  {
+    font-family: 'Open Sans', sans-serif;
 }
 a, a:hover, a:focus, a:active{
     outline: none;
