@@ -110,8 +110,21 @@ banner
 	font-size: 14px;
 	font-weight: 300;
 }
+.navbar-toggler:hover .navbar-toggler-icon  {
+    filter: invert(1);
+}
+.navbar-toggler:hover, .navbar-toggler.collapsed:hover {
+    box-shadow: 0 0 0 0.15rem #dad9d9;
+}
 .navbar-toggler:focus {
-    box-shadow: 0 0 0 0.15rem   #ddbd30;
+    box-shadow: none;
+}
+.navbar-toggler[aria-expanded="true"] {
+    background-color:#dad9d971;
+    box-shadow: 0 0 0 0.15rem #f7bb93;
+}
+.navbar-toggler-icon {
+    color: #dad9d9;
 }
 #banner{
 	background: url('../img/banner.png') no-repeat fixed;
@@ -129,6 +142,7 @@ banner
 }
 .banner-logo img{
 	display: inline-block;
+    max-width: 100%;
 }
 .banner-text h1{
 	font-family: 'Candal', sans-serif;
@@ -200,9 +214,7 @@ advantages
     color: #222222!important;
     line-height: 2rem;
 }
-/* .main-advantages {
-    padding-left: 2rem;
-} */
+
 /***************************************
 cta-1
 ***************************************/
@@ -303,24 +315,24 @@ p.feature-text {
 }
 .carousel-caption {
     display: block!important;
-    bottom: 30px;
-    padding-bottom: 30px;
+    bottom: 0px;
+    padding-bottom: 50px;
     right: 8%;
     left: 8%;
     font-size: 2rem;
     line-height: 3rem;
 }
 .carousel-caption-first {
-    bottom: 120px;
+    bottom: 50px;
 }
 .carousel-caption-second {
-    bottom: 40px;
+    bottom: 100px;
 }
 .carousel-caption-fourth {
-    bottom: 32px!important;
+    bottom: 135px!important;
 }
 .carousel-indicators {
-    bottom: 1rem;
+    bottom: 0;
     left:0;
     margin-left: 0;
     user-select: none;
@@ -645,11 +657,16 @@ footer ol, footer ul, footer p {
   
 @media (min-width: 1200px) and (max-width: 1399.9px){
     .carousel-caption-first {
-        bottom: 6rem!important;
+        bottom: 30px!important;
     }
-    .carousel-caption-second,
+    .carousel-caption-second {
+        bottom: 50px!important;
+    }
     .carousel-caption-third {
-        bottom: 35px!important;
+        bottom: -20px!important;
+    }
+    .carousel-caption-fourth {
+        bottom: 60px!important;
     }
 }
 @media (min-width: 992px) and (max-width: 1199.9px){
@@ -658,9 +675,11 @@ footer ol, footer ul, footer p {
         font-size: 1.1rem;
     }
     p.feature-text{
+        position: relative;
         margin: .5rem;
         font-size: medium;
         line-height: 1.3rem;
+        z-index: 2;
     }
     .carousel-caption {
         bottom: 0;
@@ -669,11 +688,16 @@ footer ol, footer ul, footer p {
         left: 5%;
     }
     .carousel-caption-first {
-        bottom: 5rem!important;
+        bottom: 40px!important;
     }
-    .carousel-caption-second,
+    .carousel-caption-second {
+        bottom: 60px!important;
+    }
     .carousel-caption-third {
-        bottom: 35px!important;
+        bottom: -5px!important;
+    }
+    .carousel-caption-fourth {
+        bottom: 80px!important;
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
@@ -693,16 +717,16 @@ footer ol, footer ul, footer p {
         left: 3%;
     }
     .carousel-caption-first {
-        bottom: 60px!important;
+        bottom: 35px!important;
     }
     .carousel-caption-second {
-        bottom: 30px!important;
+        bottom: 40px!important;
     }
     .carousel-caption-third {
-        bottom: 20px!important;
+        bottom: 0px!important;
     }
     .carousel-caption-fourth {
-        bottom: 10px!important;
+        bottom: 45px!important;
     }
     .carousel-indicators {
         bottom: -20px;
@@ -739,13 +763,13 @@ footer ol, footer ul, footer p {
         bottom: 15px!important;
     }
     .carousel-caption-second{
-        bottom: -10px;
+        bottom: 20px;
     }
     .carousel-caption-third {
-        bottom: -15px;
+        bottom: -10px;
     }
     .carousel-caption-fourth {
-        bottom: -16px!important;
+        bottom: 30px!important;
     }
     .carousel-indicators {
         bottom: -50px;
@@ -756,6 +780,14 @@ footer ol, footer ul, footer p {
     }
 }
 @media (min-width: 220px) and (max-width: 575.9px){
+    .overlay-detail a i {
+        bottom: 10px;
+    }
+    .btn-appoint, .btn-appoint:hover, .btn-appoint:focus {
+        margin-top: 30px;
+        padding: 8px 14px;
+        font-size: 1.4rem;
+    }
     p {
         padding: 0 1rem!important;
     }
@@ -780,7 +812,7 @@ footer ol, footer ul, footer p {
         bottom: -39vw!important;
     }
     .carousel-caption-fourth {
-        bottom: -42vw!important;
+        bottom: -30vw!important;
     }
     .carousel-indicators {
         bottom: -46px;
