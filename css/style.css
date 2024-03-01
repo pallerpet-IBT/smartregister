@@ -127,7 +127,7 @@ banner
     color: #dad9d9;
 }
 #banner{
-	background: url('../img/banner.png') no-repeat fixed;
+	background: url('../img/banner.jpg') no-repeat fixed;
 	background-size: cover;
 	min-height: 650px;
 	position: relative;
