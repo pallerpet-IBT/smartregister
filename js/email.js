@@ -1,7 +1,7 @@
 (function () {
   emailjs.init({
-    publicKey: "8MIUeQwrJghC6u4Xl", //paller.peter
-    //publicKey: "..." //IBT
+    //publicKey: "8MIUeQwrJghC6u4Xl", //paller.peter
+    publicKey: "jA9ewTOPJwJ3tbCnD", // smartreg@ibtconsulting.hu
   });
 })();
 
@@ -18,8 +18,8 @@ window.onload = function () {
         var message = document.getElementById("emailResponse");
 
         emailjs
-          .sendForm("service_uiedg7x", "template_o1jsn3m", this) // paller.peter
-          //emailjs.sendForm('service_???', 'template_???', this) // IBT
+          //.sendForm("service_uiedg7x", "template_o1jsn3m", this) // paller.peter
+          .sendForm("service_ta9ysj9", "template_vx85iis", this) // smartreg@ibtconsulting.hu
           .then(
             () => {
               if (messageContainer && message) {
