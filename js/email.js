@@ -1,7 +1,7 @@
 (function () {
   emailjs.init({
-    //publicKey: "8MIUeQwrJghC6u4Xl", //paller.peter
-    publicKey: "jA9ewTOPJwJ3tbCnD", // smartreg@ibtconsulting.hu
+    publicKey: "8MIUeQwrJghC6u4Xl", //paller.peter
+    //publicKey: "jA9ewTOPJwJ3tbCnD", // smartreg@ibtconsulting.hu
   });
 })();
 
@@ -17,41 +17,47 @@ window.onload = function () {
         );
         var message = document.getElementById("emailResponse");
 
-        emailjs
-          //.sendForm("service_uiedg7x", "template_o1jsn3m", this) // paller.peter
-          .sendForm("service_ta9ysj9", "template_vx85iis", this) // smartreg@ibtconsulting.hu
-          .then(
-            () => {
-              if (messageContainer && message) {
-                message.innerHTML = "The message has been successfully sent.";
-                messageContainer.classList.add("alert-success");
+        if (grecaptcha.getResponse() == "") {
+          alert("Please complete the CAPTCHA!");
+        } else {
+          emailjs
+            .sendForm("service_uiedg7x", "template_o1jsn3m", this) // paller.peter
+            //.sendForm("service_ta9ysj9", "template_vx85iis", this) // smartreg@ibtconsulting.hu
+            .then(
+              () => {
+                if (messageContainer && message) {
+                  message.innerHTML = "The message has been successfully sent.";
+                  messageContainer.classList.add("alert-success");
+                  messageContainer.classList.remove("hidden");
+                  setTimeout(function () {
+                    messageContainer.style.display = "none";
+                    console.log("messageContainer is hidden", messageContainer);
+                  }, 4000);
+                  this.reset();
+                  console.log("email sent!");
+                  document
+                    .getElementById("contact-form")
+                    .classList.remove("was-validated");
+                  reloadForm();
+                }
+              },
+              (error) => {
+                message.innerHTML =
+                  "The email sending failed. Please contact us at the provided email address.";
+                messageContainer.classList.add("alert-danger");
                 messageContainer.classList.remove("hidden");
-                setTimeout(function () {
-                  messageContainer.style.display = "none";
-                  console.log("messageContainer is hidden", messageContainer);
-                }, 4000);
-                this.reset();
-                console.log("email sent!");
-                document
-                  .getElementById("contact-form")
-                  .classList.remove("was-validated");
-                reloadForm();
               }
-            },
-            (error) => {
-              message.innerHTML =
-                "The email sending failed. Please contact us at the provided email address.";
-              messageContainer.classList.add("alert-danger");
-              messageContainer.classList.remove("hidden");
-            }
-          );
+            );
+        }
       }
     });
 };
 
 function validateForm() {
   var form = document.getElementById("contact-form");
-  var inputs = form.querySelectorAll("input, textarea");
+  var inputs = form.querySelectorAll(
+    "input:not(.g-recaptcha input), textarea:not(.g-recaptcha textarea)"
+  );
 
   var isValid = true;
 
@@ -65,7 +71,7 @@ function validateForm() {
       isValid = false;
     } else if (
       rule.startsWith("minlen") &&
-      value.length < parseInt(input.getAttribute("data-rule").split(":")[1], 10)
+      value.length < parseInt(rule.split(":")[1], 10)
     ) {
       isValid = false;
     }

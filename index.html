@@ -35,6 +35,9 @@
   <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lflk_opAAAAAIAVBjhnbZDnzJXd6gzPstEHmDRq"></script> -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 </head>
 
 <body id="myPage" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="60">
@@ -370,9 +373,13 @@
                    Message looks valid!
                 </div>
                 <div class="invalid-feedback" id="messageInvalid"></div>
-             </div>
-              <div class="col-12">
-                 <button id="submitButton" class="btn" type="submit" disabled>Send message</button>
+              </div>
+
+               <div class="g-recaptcha" data-sitekey="6LfChfwpAAAAACF-90O0Z3JUSQl0B7Sxdoue_KTQ" data-action="LOGIN"></div>
+              
+               <div class="col-12">
+                 <button id="submitButton" class="btn" type="submit" disabled
+                 >Send message</button>
               </div>
               <div id="emailResponseContainer" class="hidden alert" style="margin-top: 1rem;">
                 <strong id="emailResponse"></strong>
@@ -416,14 +423,14 @@
             </div>
             <div class="info-sec">
               <ul class="social-icon">
-                  <a href="https://www.facebook.com/ibtconsultingkft/" class="facebook-link">
+                  <a href="https://www.facebook.com/ibtconsultingkft/" class="facebook-link" target="blank">
                     <li class="bglight-blue">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
                         <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
                       </svg>
                     </li>
                   </a>
-                <a href="https://www.linkedin.com/company/ibtconsulting/" class="bgdark-blue-link">
+                <a href="https://www.linkedin.com/company/ibtconsulting/" class="bgdark-blue-link"  target="blank">
                   <li class="bgdark-blue">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
                       <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
@@ -451,7 +458,6 @@
   <script src="js/email.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/validation.js"></script>
-
 </body>
 
 </html>
