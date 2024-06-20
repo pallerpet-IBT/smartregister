@@ -35,8 +35,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lflk_opAAAAAIAVBjhnbZDnzJXd6gzPstEHmDRq"></script> -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?hl=en" async defer></script>
 
 </head>
 
@@ -375,9 +374,12 @@
                 <div class="invalid-feedback" id="messageInvalid"></div>
               </div>
 
-               <div class="g-recaptcha" data-sitekey="6LfChfwpAAAAACF-90O0Z3JUSQl0B7Sxdoue_KTQ" data-action="LOGIN"></div>
+              <div>
+                <div class="g-recaptcha" data-sitekey="6LfChfwpAAAAACF-90O0Z3JUSQl0B7Sxdoue_KTQ" data-action="LOGIN" data-callback="onSubmit"></div>
+                <div id="captchaInvalid" class="is-invalid" ></div>
+              </div>
               
-               <div class="col-12">
+              <div class="col-12">
                  <button id="submitButton" class="btn" type="submit" disabled
                  >Send message</button>
               </div>
@@ -455,8 +457,9 @@
   </footer>
   <!--/ footer-->
 
-  <script src="js/email.js"></script>
+  <script src="js/animation.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/email.js"></script>
   <script src="js/validation.js"></script>
 </body>
 

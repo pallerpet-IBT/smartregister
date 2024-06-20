@@ -1,10 +1,16 @@
 (function () {
   emailjs.init({
-    publicKey: "8MIUeQwrJghC6u4Xl", //paller.peter
-    //publicKey: "jA9ewTOPJwJ3tbCnD", // smartreg@ibtconsulting.hu
+    //publicKey: "8MIUeQwrJghC6u4Xl", //paller.peter
+    publicKey: "jA9ewTOPJwJ3tbCnD", // smartreg@ibtconsulting.hu
   });
 })();
 
+const captcha = document.getElementById("captchaInvalid");
+var captchaFilled = false;
+function onSubmit(token) {
+  captchaFilled = true;
+  captcha.innerHTML = "";
+}
 window.onload = function () {
   document
     .getElementById("contact-form")
@@ -18,11 +24,12 @@ window.onload = function () {
         var message = document.getElementById("emailResponse");
 
         if (grecaptcha.getResponse() == "") {
-          alert("Please complete the CAPTCHA!");
+          captcha.innerHTML = "Please click the captcha!";
         } else {
+          captcha.innerHTML = "";
           emailjs
-            .sendForm("service_uiedg7x", "template_o1jsn3m", this) // paller.peter
-            //.sendForm("service_ta9ysj9", "template_vx85iis", this) // smartreg@ibtconsulting.hu
+            //.sendForm("service_uiedg7x", "template_o1jsn3m", this) // paller.peter
+            .sendForm("service_ta9ysj9", "template_vx85iis", this) // smartreg@ibtconsulting.hu
             .then(
               () => {
                 if (messageContainer && message) {

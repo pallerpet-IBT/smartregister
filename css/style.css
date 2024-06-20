@@ -231,6 +231,49 @@ advantages
     line-height: 2rem;
 }
 
+/* Initial state of the elements */
+.advantages-info {
+    opacity: 0;
+    transform: translateX(-100%); /* Off-screen to the left */
+    transition: all 1.5s ease-out; /* Slower transition */
+}
+
+.advantages-info.right {
+    transform: translateX(100%); /* Off-screen to the right */
+}
+
+/* Animation for sliding in from left */
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation for sliding in from right */
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Applied classes for animating in */
+.slide-in-left {
+    animation: slideFromLeft 1.5s forwards; /* Slower animation duration */
+}
+
+.slide-in-right {
+    animation: slideFromRight 1.5s forwards; /* Slower animation duration */
+}
 /***************************************
 cta-1
 ***************************************/
@@ -585,6 +628,10 @@ textarea.form-control {
 .form-control.is-valid:focus {
     border: 1px solid #198754 !important;
     /* box-shadow: 0 0 0 0.15rem   #ddbd3050; */
+}
+
+.is-invalid {
+    color: red;
 }
 /***************************************
 footer
