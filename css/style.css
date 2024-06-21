@@ -228,7 +228,8 @@ advantages
 .icon-info-span {
     font-size: 1.5rem !important;
     color: #222222 !important;
-    line-height: 2rem;
+    line-height: 2.25rem;
+    padding-bottom: 8px;
 }
 
 /* Initial state of the elements */
